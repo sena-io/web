@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="시대순으로 사건과 인물을 탐색하는 인터랙티브 문학 연표" />
+  <title>문학사 인터랙티브 연표</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <header class="hero">
+      <div class="eyebrow">LITERARY HISTORY</div>
+      <h1>문학사 인터랙티브 연표</h1>
+      <p>
+        시대별 문학 작품과 인물을 시간의 흐름에 따라 살펴보세요.
+        항목을 선택하면 작품의 특징과 의미를 확인할 수 있습니다.
+      </p>
+    </header>
+
+    <section class="controls" aria-label="연표 필터">
+      <div class="legend" id="legend"></div>
+      <button class="reset-button" id="resetButton" type="button">전체 보기</button>
+    </section>
+
+    <section class="timeline-card">
+      <div class="timeline-toolbar">
+        <div>
+          <span class="timeline-label">1857–1927</span>
+          <h2>근대 문학의 흐름</h2>
+        </div>
+        <p>가로로 스크롤하여 모든 항목을 확인하세요.</p>
+      </div>
+
+      <div class="timeline-scroll" id="timelineScroll" tabindex="0" aria-label="문학사 연표">
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <section class="detail-panel" id="detailPanel" aria-live="polite">
+      <div class="detail-empty">
+        <span class="detail-empty-icon">↗</span>
+        <div>
+          <strong>연표의 항목을 선택해 보세요.</strong>
+          <p>연도, 시대, 작품 설명이 이곳에 표시됩니다.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <template id="timelineItemTemplate">
+    <button class="timeline-item" type="button">
+      <span class="item-year"></span>
+      <span class="item-dot"></span>
+      <span class="item-card">
+        <span class="item-era"></span>
+        <strong class="item-title"></strong>
+      </span>
+    </button>
+  </template>
+
+  <script src="./script.js"></script>
+</body>
+</html>
